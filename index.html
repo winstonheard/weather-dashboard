@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,6 +19,72 @@
         <div class="forecast">
             <h2>5-Day Forecast</h2>
             <div id="forecastContainer"></div>
+        </div>
+    </div>
+    <script src="assets/scripts/script.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <div id="search-container">
+        <input type="text" id="city-input" placeholder="Enter city name" />
+        <button id="search-btn">Search</button>
+    </div>
+    <div id="current-weather">
+        <h2 id="city-name">City Name</h2>
+        <p id="temperature">Temperature</p>
+        <p id="weather-description">Weather Description</p>
+        <p id="humidity">Humidity</p>
+        <p id="wind">Wind</p>
+        <img id="weather-icon" src="" alt="Weather icon" />
+    </div>
+    <div id="forecast">
+        <h2>5-Day Forecast</h2>
+        <div id="forecast-container">
+            <!-- Day 1 forecast -->
+            <div class="forecast">
+                <p id="date0">Date</p>
+                <img id="icon0" src="" alt="Weather icon" />
+                <p id="temp0">Temperature</p>
+                <p id="humidity0">Humidity</p>
+            </div>
+            <!-- Day 2 forecast -->
+            <div class="forecast">
+                <p id="date1">Date</p>
+                <img id="icon1" src="" alt="Weather icon" />
+                <p id="temp1">Temperature</p>
+                <p id="humidity1">Humidity</p>
+            </div>
+            <!-- Day 3 forecast -->
+            <div class="forecast">
+                <p id="date2">Date</p>
+                <img id="icon2" src="" alt="Weather icon" />
+                <p id="temp2">Temperature</p>
+                <p id="humidity2">Humidity</p>
+            </div>
+            <!-- Day 4 forecast -->
+            <div class="forecast">
+                <p id="date3">Date</p>
+                <img id="icon3" src="" alt="Weather icon" />
+                <p id="temp3">Temperature</p>
+                <p id="humidity3">Humidity</p>
+            </div>
+            <!-- Day 5 forecast -->
+            <div class="forecast">
+                <p id="date4">Date</p>
+                <img id="icon4" src="" alt="Weather icon" />
+                <p id="temp4">Temperature</p>
+                <p id="humidity4">Humidity</p>
+            </div>
         </div>
     </div>
     <script src="assets/scripts/script.js"></script>
