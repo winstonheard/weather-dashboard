@@ -20,6 +20,26 @@ input[type="text"] {
     padding: 10px;
 }
 
+.city-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 10;
+    width: calc(100% - 2px);
+    box-sizing: border-box;
+    top: 100%;
+  }
+  
+  .city-option {
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .city-option:hover {
+    background-color: #f1f1f1;
+  }
+
 button {
     padding: 10px;
     background-color: #4CAF50;

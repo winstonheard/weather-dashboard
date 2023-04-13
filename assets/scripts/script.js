@@ -60,6 +60,91 @@ function fetchWeatherData(weatherUrl, forecastUrl) {
         });
 }
 
+
+// ...
+
+// Add event listener for the search button
+searchBtn.addEventListener("click", triggerSearch);
+
+// Add event listener for the Enter key on the search input
+cityInput.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+        triggerSearch();
+    }
+});
+
+// Add event listener for input on the search bar to display a dropdown list of saved cities
+cityInput.addEventListener("input", displayCityDropdown);
+
+// Create an element to display the dropdown list of saved cities
+const cityDropdown = document.createElement("div");
+cityDropdown.setAttribute("id", "cityDropdown");
+cityDropdown.classList.add("city-dropdown");
+cityInput.parentNode.style.position = "relative";
+cityInput.parentNode.insertBefore(cityDropdown, cityInput.nextSibling);
+
+// Display a dropdown list of saved cities based on the input text
+function displayCityDropdown() {
+    const inputText = cityInput.value.toLowerCase();
+    const matchedCities = searchedCities.filter(city => city.toLowerCase().startsWith(inputText));
+    cityDropdown.innerHTML = "";
+
+    if (matchedCities.length === 0 || inputText === "") {
+        cityDropdown.style.display = "none";
+        return;
+    }
+
+    matchedCities.forEach(city => {
+        const cityOption = document.createElement("div");
+        cityOption.textContent = city;
+        cityOption.classList.add("city-option");
+        cityOption.addEventListener("click", () => {
+            cityInput.value = city;
+            cityDropdown.style.display = "none";
+        });
+        cityDropdown.appendChild(cityOption);
+    });
+
+    cityDropdown.style.display = "block";
+}
+
+// Trigger search action
+function triggerSearch() {
+    const cityName = cityInput.value;
+    if (!cityName) return;
+    getWeatherDataByName(cityName);
+    saveSearchedCity(cityName);
+}
+
+// ...
+
+
+
+// Get the user's location when the dashboard first loads
+getLocation();
+
+// Load weather data for the last searched city if available
+const searchedCities = getSearchedCities();
+if (searchedCities.length > 0) {
+    getWeatherDataByName(searchedCities[searchedCities.length - 1]);
+}
+
+// Save searched city to localStorage
+function saveSearchedCity(cityName) {
+    const searchedCities = getSearchedCities();
+    if (!searchedCities.includes(cityName)) {
+        searchedCities.push(cityName);
+        localStorage.setItem("searchedCities", JSON.stringify(searchedCities));
+    }
+}
+
+// Get searched cities from localStorage
+function getSearchedCities() {
+    const searchedCitiesJSON = localStorage.getItem("searchedCities");
+    return searchedCitiesJSON ? JSON.parse(searchedCitiesJSON) : [];
+}
+
+
 // Display current weather data on the dashboard
 function displayCurrentWeather(data) {
     const temp = data.main.temp.toFixed(1);
