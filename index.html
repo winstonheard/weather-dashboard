@@ -1,29 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="search-box">
-            <input type="text" id="cityInput" placeholder="Search for a city">
-            <button id="searchBtn">Search</button>
-        </div>
-        <div class="current-weather">
-            <h2 id="currentCity"></h2>
-            <div id="currentWeather"></div>
-        </div>
-        <div class="forecast">
-            <h2>5-Day Forecast</h2>
-            <div id="forecastContainer"></div>
-        </div>
-    </div>
-    <script src="assets/scripts/script.js"></script>
-</body>
-</html> -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,55 +10,93 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <div id="search-container">
-        <input type="text" id="city-input" placeholder="Enter city name" />
-        <button id="search-btn">Search</button>
+    <h1>Tempestas Forecast</h1>
+    
+    <div id="search-and-popular-cities">
+        <div class="search-wrapper">
+            <div id="search-container" class="search-bar">
+            <input type="text" id="city-input" placeholder="Enter city name" />
+            <button id="search-btn">Search</button>
+        </div>
+        </div>
+    
+    <div class="popular-cities">
+        <button class="city-btn">Atlanta</button>
+        <button class="city-btn">Baltimore</button>
+        <button class="city-btn">Chicago</button>
+        <button class="city-btn">Dallas</button>
+        <button class="city-btn">Houston</button>
+        <button class="city-btn">Los Angeles</button>
+        <button class="city-btn">Miami</button>
+        <button class="city-btn">New York</button>
+        <button class="city-btn">San Diego</button>
+        <button class="city-btn">San Francisco</button>
+        <button class="city-btn">Washington</button>
+      </div>
     </div>
-    <div id="current-weather">
-        <h2 id="city-name">City Name</h2>
-        <p id="temperature">Temperature</p>
-        <p id="weather-description">Weather Description</p>
-        <p id="humidity">Humidity</p>
-        <p id="wind">Wind</p>
-        <img id="weather-icon" src="" alt="Weather icon" />
-    </div>
+      
+    
+    <div id="current-weather-container">
+        <div id="current-weather">
+          <h2 id="current-location"></h2>
+          <img id="weather-icon" src="" alt="Weather icon" />
+          <p id="current-temp"></p>
+          <p id="current-description"></p>
+          <p id="current-humidity"></p>
+          <p id="current-wind"></p>
+        </div>
+        <div id="current-weather-image">
+          
+        </div>
+      </div>
+      
     <div id="forecast">
         <h2>5-Day Forecast</h2>
         <div id="forecast-container">
             <!-- Day 1 forecast -->
-            <div class="forecast">
+            <div class="forecast-card forecast">
                 <p id="date0">Date</p>
                 <img id="icon0" src="" alt="Weather icon" />
                 <p id="temp0">Temperature</p>
+                <p id="description0">Weather</p>
                 <p id="humidity0">Humidity</p>
+                <p id="wind0">Wind</p>
             </div>
             <!-- Day 2 forecast -->
-            <div class="forecast">
+            <div class="forecast-card forecast">
                 <p id="date1">Date</p>
                 <img id="icon1" src="" alt="Weather icon" />
                 <p id="temp1">Temperature</p>
+                <p id="description1">Weather</p>
                 <p id="humidity1">Humidity</p>
+                <p id="wind1">Wind</p>
             </div>
             <!-- Day 3 forecast -->
-            <div class="forecast">
+            <div class="forecast-card forecast">
                 <p id="date2">Date</p>
                 <img id="icon2" src="" alt="Weather icon" />
                 <p id="temp2">Temperature</p>
+                <p id="description2">Weather</p>
                 <p id="humidity2">Humidity</p>
+                <p id="wind2">Wind</p>
             </div>
             <!-- Day 4 forecast -->
-            <div class="forecast">
+            <div class="forecast-card forecast">
                 <p id="date3">Date</p>
                 <img id="icon3" src="" alt="Weather icon" />
                 <p id="temp3">Temperature</p>
+                <p id="description3">Weather</p>
                 <p id="humidity3">Humidity</p>
+                <p id="wind3">Wind</p>
             </div>
             <!-- Day 5 forecast -->
-            <div class="forecast">
+            <div class="forecast-card forecast">
                 <p id="date4">Date</p>
                 <img id="icon4" src="" alt="Weather icon" />
                 <p id="temp4">Temperature</p>
+                <p id="description4">Weather</p>
                 <p id="humidity4">Humidity</p>
+                <p id="wind4">Wind</p>
             </div>
         </div>
     </div>
