@@ -21,4 +21,4 @@ I want to see cities that I have previously searched in the search bar for easy 
 
 ## Deployed Link
 
-[Link to planner](https://winstonheard.github.io/weather-dashboard/) 
+[Link to dashboard](https://winstonheard.github.io/weather-dashboard/) 
